@@ -6,7 +6,7 @@ import java.util.Arrays;
  * Created by Administrator on 2017/6/23.
  */
 public class InsertSort {
-    public static void directInsert(int[] a) {
+    private static void directInsert(int[] a) {
         int[] con = new int[a.length];
         for(int i=0;i<a.length;i++) {
             int temp = a[i];
