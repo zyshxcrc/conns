@@ -26,6 +26,11 @@ public class ShiroConfig {
     }
     @Bean
     public ShiroFilterFactoryBean shiroFilterFactoryBean(SecurityManager securityManager){
+        /*1.设置Realm extends AuthorizingRealm
+        * 2.设置SecurityManager 设置 realms
+        * 3.设置ShiroFilterFactoryBean web.xml delegatingFilterProxy filter_name 设置 SecurityManager ShiroFilterChain
+        * 4.设置LifeCycleBeanPostProcessor
+        * 5.设置MethodInvokingFactoryBean SecurityUtils.setSecurityManager()*/
         ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
         shiroFilterFactoryBean.setSecurityManager(securityManager);
         Map<String,String> shiroFilterChainMap = new HashMap<String,String>();
