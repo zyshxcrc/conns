@@ -1,10 +1,13 @@
 package mapper;
 
-import
+
+import domain.User;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
+
+import java.util.List;
 
 /**
  * Created by Administrator on 2017/7/6.
@@ -24,5 +27,5 @@ public interface UserMapper {
     @Delete("DELETE FROM tbl_user WHERE userId = #{userId}")
     void deleteUserById(@Param("userId") String userId);
 
-    void insertUser(domain.User user);
+    void insertUser(User user);
 }

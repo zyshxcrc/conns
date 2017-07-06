@@ -1,6 +1,9 @@
 package service;
 
-import src.java.com.domain.User;
+import domain.User;
+
+import java.util.List;
+
 /**
  * Created by Administrator on 2017/7/6.
  */
