@@ -10,15 +10,10 @@
           <root url="file://$MODULE_DIR$/src/main/webapp" relative="/" />
         </webroots>
         <sourceRoots>
-          <root url="file://$MODULE_DIR$/src/java/com" />
-          <root url="file://$MODULE_DIR$/src/java/com/algorithm" />
-          <root url="file://$MODULE_DIR$/src/java/com/config" />
-          <root url="file://$MODULE_DIR$/src/java/com/conn" />
-          <root url="file://$MODULE_DIR$/src/java/com/conn/controller" />
-          <root url="file://$MODULE_DIR$/src/java/com/dao" />
-          <root url="file://$MODULE_DIR$/src/java/com/dao/interface" />
-          <root url="file://$MODULE_DIR$/src/java/com/domain" />
           <root url="file://$MODULE_DIR$/src/java/resources" />
+          <root url="file://$MODULE_DIR$/src/java/com/dao/interface" />
+          <root url="file://$MODULE_DIR$/src/java/com/conn/controller" />
+          <root url="file://$MODULE_DIR$/src/java/com/conn" />
         </sourceRoots>
       </configuration>
     </facet>
@@ -34,12 +29,9 @@
       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/java/com/dao/interface" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/java/com/conn/controller" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/java/com/algorithm" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/java/com" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/java/com/domain" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/java/com/dao" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/java/com/conn" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/java/com/config" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />

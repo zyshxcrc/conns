@@ -4,16 +4,18 @@ package domain;
  * Created by Administrator on 2017/6/27.
  */
 public class User {
-    private long id;
-    private String name;
-    private String password;
 
-    public long getId() {
-        return id;
+    private String userId;
+    private String name;
+    private String depId;
+    private String sex;
+
+    public String getUserId() {
+        return userId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public String getName() {
@@ -24,11 +26,29 @@ public class User {
         this.name = name;
     }
 
-    public String getPassword() {
-        return password;
+    public String getDepId() {
+        return depId;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setDepId(String depId) {
+        this.depId = depId;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userId='" + userId + '\'' +
+                ", name='" + name + '\'' +
+                ", depId='" + depId + '\'' +
+                ", sex='" + sex + '\'' +
+                '}';
     }
 }
