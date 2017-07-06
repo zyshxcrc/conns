@@ -2,16 +2,15 @@ package config;
 
 import dao.MyRealm;
 import org.apache.shiro.mgt.DefaultSecurityManager;
+import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
+import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by Administrator on 2017/6/30.
- */
 @Configuration
 public class ShiroConfig {
     @Bean
@@ -20,7 +19,7 @@ public class ShiroConfig {
     }
     @Bean
     public SecurityManager securityManager(){
-        DefaultSecurityManager defaultSecurityManager = new DefaultSecurityManager();
+        DefaultWebSecurityManager defaultSecurityManager = new DefaultWebSecurityManager();
         defaultSecurityManager.setRealm(myRealm());
         return defaultSecurityManager;
     }
@@ -33,15 +32,15 @@ public class ShiroConfig {
         * 5.设置MethodInvokingFactoryBean SecurityUtils.setSecurityManager()*/
         ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
         shiroFilterFactoryBean.setSecurityManager(securityManager);
-        Map<String,String> shiroFilterChainMap = new HashMap<String,String>();
-        shiroFilterChainMap.put("/select","anon");
+        Map<String,String> shirFilterChainMap = new HashMap<>();
+        shirFilterChainMap.put("/select","anon");
         shiroFilterFactoryBean.setLoginUrl("/login");
         // 登录成功后要跳转的链接
         shiroFilterFactoryBean.setSuccessUrl("/index");
 
         //未授权界面;
         shiroFilterFactoryBean.setUnauthorizedUrl("/403");
-        shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
+        shiroFilterFactoryBean.setFilterChainDefinitionMap(shirFilterChainMap);
         return shiroFilterFactoryBean;
     }
 }

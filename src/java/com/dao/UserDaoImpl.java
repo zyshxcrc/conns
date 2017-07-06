@@ -22,7 +22,7 @@ public class UserDaoImpl {
             return null;
         });
     }
-    public User getUser(final long id) {
+    public User getUser(final int id) {
         return redisTemplate.execute((RedisConnection connection)->{
                 byte[] key = redisTemplate.getStringSerializer().serialize("user.uid." + id);
                 if (connection.exists(key)) {
