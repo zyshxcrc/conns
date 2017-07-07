@@ -1,8 +1,11 @@
 package domain;
 
+import org.springframework.stereotype.Component;
+
 /**
  * Created by Administrator on 2017/6/27.
  */
+@Component
 public class User {
 
     private String userId;
