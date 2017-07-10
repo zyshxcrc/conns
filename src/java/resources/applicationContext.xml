@@ -3,15 +3,18 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:folw="http://www.springframework.org/schema/webflow-config"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context-3.0.xsd
         http://www.springframework.org/schema/mvc
-        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+        http://www.springframework.org/schema/webflow-config
+        http://www.springframework.org/schema/webflow-config/spring-webflow-config-2.4.xsd">
 
 
-    <context:component-scan base-package="com.conn"/>
+    <context:component-scan base-package="conn"/>
         <!-- 不处理静态资源-->
     <mvc:default-servlet-handler/>
         <!--  to support the annotated controller methods like @RequestMapping, @ExceptionHandler, etc. that come with MVC-->
@@ -20,6 +23,17 @@
     <!--<context:property-placeholder location="classpath*:system.properties,classpath*:redis.properties,classpath*:db.properties"/>-->
         <!-- 子配置文件文件读入 -->
     <!--<import resource="classpath:applicationContextMongoDB.xml"/>-->
+    
+    <folw:flow-executor id="flowExecutor"/>
+    <folw:flow-registry id="registry" base-path="/WEB-INF/flow">
+        <folw:flow-location-pattern value="**-flow.XML"/>
+    </folw:flow-registry>
+    <bean class="org.springframework.webflow.mvc.servlet.FlowHandlerMapping">
+        <property name="flowRegistry" ref="registory"/>
+    </bean>
+    <bean class="org.springframework.webflow.mvc.servlet.FlowHandlerAdapter">
+        <property name="flowExecutor" ref="flowExecutor"/>
+    </bean>
 
         <!-- =====================================Spring MVC===================================== -->
         <!-- spring mvc 视图解析器 -->

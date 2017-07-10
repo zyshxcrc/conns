@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Import;
 
 
 @Configuration
-@ComponentScan(basePackages = {"com.controller"})
+@ComponentScan(basePackages = {"controller","util"})
 @Import(config.ShiroConfig.class)
 @EnableAspectJAutoProxy
 public class RootConfig {
